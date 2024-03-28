@@ -14,7 +14,6 @@ export default function ReaderArea() {
   const location = useLocation();
 
   useEffect(() => {
-    //setIsLoading(true);
     if (isLoading == true) {
       LoadData();
       setTimeout(function() {
@@ -33,6 +32,11 @@ export default function ReaderArea() {
   const HandlePrevChange = () => {
     setthisState("prev");
     setIsLoading(true);
+  };
+
+  const OnTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
 
   async function LoadData() {
@@ -116,7 +120,7 @@ export default function ReaderArea() {
                 </a>
               </li>
               <li>
-                <span>ตอนที่ {thisState == "" ? location.state.EpisodeNo : name}</span>
+                <span onClick={OnTop}>ตอนที่ {thisState == "" ? location.state.EpisodeNo : name}</span>
               </li>
               <li>
                 <a onClick={HandleNextChange}>

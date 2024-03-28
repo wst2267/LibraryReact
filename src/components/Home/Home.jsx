@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -7,8 +7,6 @@ export default function Home() {
   const [items, setItems] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const aaa = useLocation();
-  console.log(aaa)
 
   async function FetchData() {
     try {
@@ -17,7 +15,6 @@ export default function Home() {
         "https://expressapi-d1vx.onrender.com/Getlibrary"
       );
       setItems(response.data);
-      console.log(response.data)
       setIsLoading(false);
     } 
     catch (exception) {
@@ -64,7 +61,7 @@ export default function Home() {
                       ซอมบี้วิบัติได้เริ่มต้นขึ้นแล้ว…!
                       ผู้รอดชีวิตต่างค้นหาวิธีผ่อนคลายความเครียดเมื่อเผชิญกับความตาย…!
                     </p>
-                  </div>8
+                  </div>
 
                   <div className="card-actions justify-end">
                     <Link to={`/select/${data.Name}`} state={{ TitleImage: data.TitleImage, Episodes: data.Episode, Name: data.Name }}>

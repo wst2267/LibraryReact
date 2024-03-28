@@ -4,8 +4,6 @@ import Navbar from "../Navbar/Navbar.jsx";
 
 export default function Selection() {
   const location = useLocation();
-  //console.log(name);
-  //console.log("Selection: ", location);
 
   return (
     <>
@@ -44,7 +42,7 @@ export default function Selection() {
                             AllEpisode: location.state.Episodes
                           }}
                         >
-                          <button className="btn btn-primary"> อ่าน </button>
+                          <button className="btn btn-wide btn-block btn-primary"> อ่าน </button>
                         </Link>
                       </td>
                     </tr>
